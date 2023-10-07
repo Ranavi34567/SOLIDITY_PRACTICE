@@ -31,3 +31,12 @@ contract Storage {
     }
 }
 -------------------------------------------------------------
+3. contract-constant problem
+// SPDX-License-Identifier : MIT
+pragma solidity ^0.8.13;
+contract Constant {
+    uint public num = 89;
+    string public  constant str = "Hello Pranavi";    
+}
+---------------------------------------------------------
+
