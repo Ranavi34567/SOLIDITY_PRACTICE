@@ -39,4 +39,16 @@ contract Constant {
     string public  constant str = "Hello Pranavi";    
 }
 ---------------------------------------------------------
+4. contract-immutable problem
+//immutable variables can be set inside the constructor but cannot be modified afterwards
+pragma solidity ^0.8.18;
+contract Immutable{
+    uint immutable public num;
+    address immutable public  myaddress;
+    constructor(uint _num){
+        myaddress = msg.sender;
+        num = _num;
+    }
+}
+---------------------------------------------------------------------------------------------------
 
