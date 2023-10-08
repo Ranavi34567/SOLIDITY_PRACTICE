@@ -32,7 +32,7 @@ contract Storage {
     }
 }
 -------------------------------------------------------------
-DAY-3
+DAY-4
 3. contract-constant problem
 // SPDX-License-Identifier : MIT
 pragma solidity ^0.8.13;
