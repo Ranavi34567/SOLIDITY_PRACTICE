@@ -320,6 +320,56 @@ contract Enum {
     Status public status;
 }
 --------------------------------------------------------------------------------------------------
+DAY-7 
+ENUMS
+#IStorage.sol
+----------------
+contract IStorage {    
+    enum RecordState {StateA, StateB}
+    function setState(address user, RecordState newState) public;
+}
+#Storage.sol
+---------------
+import './IStorage.sol';
+contract  Storage  is IStorage { 
+    mapping(address=>RecordState) public states;
+    
+    constructor() public {}
+    
+    function setState(address user, RecordState newState) public {
+	 states[user] = newState;   
+    }
+}
+#StorageUser.sol
+-------------------
+import './IStorage.sol';
+contract StorageUser {
+  IStorage public recordStorage;
+    
+  constructor(IStorage _recordStorage) public {	    
+    recordStorage = _recordStorage;
+  }
+    
+  function changeStateA() public {	    
+    recordStorage.setState(msg.sender, IStorage.RecordState.StateA);	    
+  }
 
-
+  function changeStateB() public {
+    recordStorage.setState(msg.sender, IStorage.RecordState.StateB);	    
+  }   
+}
+ //uncomment this method to use 'updated version' of contract
+    // function changeStateC() external {
+    //     recordStorage.setState(msg.sender, IStorage.RecordState.StateC);
+    // }
+------------------------------------------------------------------------------------------
+day-8 
+ENUMS 
+----------------------------------------------------------------------------------------------
+DAY-9 
+STRUCTS 
+-----------------------------------------------------------------------------------
+DAY-10 
+STRUCTS CONCEPTS 
+------------------------------------------------------------------
 
